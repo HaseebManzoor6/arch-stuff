@@ -1,0 +1,15 @@
+base
+linux
+linux-firmware
+base-devel
+sudo
+which
+git
+man-db
+man-pages
+texinfo
+neovim
+most
+bat
+zsh
+networkmanager

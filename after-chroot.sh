@@ -6,6 +6,9 @@ read my_hostname
 echo "$my_hostname" >> /etc/hostname
 mkinitcpio -P
 
+pacman-key --init
+pacman-key --populate archlinux
+
 # users
 passwd
 groupadd sudo

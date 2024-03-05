@@ -1,3 +1,5 @@
+xorg
+xorg-xinit
 i3-wm
 polybar
 dmenu

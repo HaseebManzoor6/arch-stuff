@@ -9,3 +9,5 @@ echo "TerminalEmulator=alacritty\nTerminalEmulatorDismissed=true" > ~/.config/xf
 cp /usr/share/applications/nvim.desktop ~/.local/share/applications/nvim.desktop
 sed -i 's/^Exec=/Exec=exo-open' ~/.local/share/applications/nvim.desktop
 sed -i 's/^Terminal=/Terminal=false' ~/.local/share/applications/nvim.desktop
+
+cp ./.xinitrc ~

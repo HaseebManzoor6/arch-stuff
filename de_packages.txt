@@ -4,6 +4,7 @@ i3-wm
 polybar
 dmenu
 alacritty
+filesystem
 gnome-themes-extra
 libadwaita
 network-manager-applet

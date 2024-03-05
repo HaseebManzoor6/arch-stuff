@@ -68,4 +68,4 @@ nm-applet &
 #xss-lock --transfer-sleep-lock -- i3lock -k -B 2 --{time,date,verif,wrong}-color=ffffff --{time,date,verif,wrong}-font='NotoSans NF' --{inside,insidever,insidewrong}-color=00000000 --verif-text='...' --wrong-text='' &
 
 # xmonad
-exec i3-wm
+exec i3

@@ -14,5 +14,5 @@ passwd
 groupadd sudo
 echo 'Name the admin user: '
 read admin_username
-useradd -m -G sudo "$admin_username"
+useradd -m -G sudo,video "$admin_username"
 passwd $admin_username

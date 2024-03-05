@@ -12,4 +12,5 @@ sed -i 's/^Exec=/Exec=exo-open/g' ~/.local/share/applications/nvim.desktop
 sed -i 's/^Terminal=/Terminal=false/g' ~/.local/share/applications/nvim.desktop
 
 cp .xinitrc ~
-cp -r i3 .config
+cp -r i3 ~/.config
+cp -r polybar ~/.config

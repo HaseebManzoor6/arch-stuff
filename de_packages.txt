@@ -17,4 +17,4 @@ ttf-ubuntu-nerd
 firefox
 thunar
 tumbler
-exo-open
+exo

@@ -5,3 +5,4 @@ genfstab -U /mnt >> /mnt/etc/fstab
 ln -sf /mnt/usr/share/zoneinfo/UTC /mnt/etc/localtime
 cp -r . /mnt/archinstall
 arch-chroot /mnt
+sudo systemctl enable NetworkManager

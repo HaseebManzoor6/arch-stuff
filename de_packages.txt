@@ -1,6 +1,7 @@
 xorg
 xorg-xinit
 i3-wm
+feh
 polybar
 dmenu
 alacritty
@@ -10,6 +11,7 @@ libadwaita
 network-manager-applet
 nm-connection-editor
 alsa-firmware
+alsa-utils
 pulseaudio
 pulseaudio-alsa
 pavucontrol
@@ -17,6 +19,7 @@ pasystray
 trayer
 ttf-noto-nerd
 ttf-ubuntu-nerd
+ttf-jetbrains-mono-nerd
 firefox
 thunar
 tumbler

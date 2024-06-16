@@ -1,3 +1,9 @@
+if [[ $EUID > 0 ]]
+then
+	echo "Please run as root. Exiting."
+	exit
+fi
+
 echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen
 locale-gen
 echo 'LANG=en_US.UTF-8' >> /etc/locale.conf

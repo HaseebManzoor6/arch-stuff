@@ -17,6 +17,8 @@ pulseaudio-alsa
 pavucontrol
 pasystray
 trayer
+dunst
+blueman
 ttf-noto-nerd
 ttf-ubuntu-nerd
 ttf-jetbrains-mono-nerd

@@ -112,6 +112,9 @@ local/mesa-utils 9.0.0-3
 When using `nvidia-prime`, do not use `xf86-video-intel`.
 Enable automatically powering down: <https://us.download.nvidia.com/XFree86/Linux-x86_64/525.89.02/README/dynamicpowermanagement.html>
 
+### Crashes During Suspend/Sleep
+Enable `nvidia-resume.service` and `nvidia-suspend.service`
+
 ## Battery Life
 Make sure graphics card is set up right (see above)
 
@@ -120,6 +123,20 @@ Install `tlp` package and:
 > `# systemctl enable tlp`
 
 (\# meaning as root)
+
+`tlp` can also limit the maximum battery charge, in the config
+file `/etc/tlp.conf`:
+```
+# don't charge above 80%
+STOP_CHARGE_THRESH_BAT0=80
+```
+On some systems (ideapad) this option has different parameters.
+Check with
+
+> `# tlp-stat -b`
+
+On ideapad this option is either 0 or 1, 0 means no threshold, 1
+means 90%.
 
 ## Laptop Brightness
 Tools like `acpilight` (a port of `xbacklight` for laptops)

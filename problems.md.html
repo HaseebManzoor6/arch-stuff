@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>arch/problems</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="/home/h/.mdnote.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">arch/problems</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#linux-knowledge" id="toc-linux-knowledge">Linux
+Knowledge</a>
+<ul>
+<li><a href="#total-directory-size" id="toc-total-directory-size">Total
+Directory Size</a></li>
+<li><a href="#managing-python" id="toc-managing-python">Managing
+Python</a></li>
+<li><a href="#thunar" id="toc-thunar">Thunar</a>
+<ul>
+<li><a href="#thumbnails" id="toc-thumbnails">Thumbnails</a></li>
+<li><a href="#open-in-terminal" id="toc-open-in-terminal">Open in
+Terminal</a></li>
+<li><a href="#open-in-nvim" id="toc-open-in-nvim">Open in NVIM</a></li>
+</ul></li>
+<li><a href="#mounting-a-windows-partition"
+id="toc-mounting-a-windows-partition">Mounting A Windows
+Partition</a></li>
+</ul></li>
+<li><a href="#problems" id="toc-problems">Problems</a>
+<ul>
+<li><a href="#audio" id="toc-audio">Audio</a></li>
+<li><a href="#dark-theme-for-gtk-gnome-apps"
+id="toc-dark-theme-for-gtk-gnome-apps">Dark Theme for GTK (GNOME)
+Apps</a></li>
+<li><a href="#nvidia" id="toc-nvidia">NVIDIA</a>
+<ul>
+<li><a href="#crashes-during-suspendsleep"
+id="toc-crashes-during-suspendsleep">Crashes During
+Suspend/Sleep</a></li>
+</ul></li>
+<li><a href="#battery-life" id="toc-battery-life">Battery Life</a></li>
+<li><a href="#laptop-brightness" id="toc-laptop-brightness">Laptop
+Brightness</a></li>
+</ul></li>
+<li><a href="#customization" id="toc-customization">Customization</a>
+<ul>
+<li><a href="#locksuspend-on-close-laptop-lid"
+id="toc-locksuspend-on-close-laptop-lid">Lock/suspend on close laptop
+lid</a></li>
+<li><a href="#systray-icon-customization"
+id="toc-systray-icon-customization">Systray icon customization</a></li>
+</ul></li>
+<li><a href="#installing-stuff" id="toc-installing-stuff">Installing
+Stuff</a>
+<ul>
+<li><a href="#tex-live" id="toc-tex-live">TeX Live</a></li>
+</ul></li>
+<li><a href="#pandoc-test" id="toc-pandoc-test">Pandoc Test</a></li>
+</ul>
+</nav>
+<p>Many hurdles overcome when learning Arch.</p>
+<h1 id="linux-knowledge">Linux Knowledge</h1>
+<h2 id="total-directory-size">Total Directory Size</h2>
+<p><code>du -h dir</code></p>
+<h2 id="managing-python">Managing Python</h2>
+<p>System stuff might depend on Python, so be careful when trying to add
+other versions. Use <code>pyenv</code>: <a
+href="https://github.com/pyenv/pyenv"
+class="uri">https://github.com/pyenv/pyenv</a></p>
+<pre><code>pyenv install 3.11.6
+pyenv local 3.11.6</code></pre>
+<h2 id="thunar">Thunar</h2>
+<h3 id="thumbnails">Thumbnails</h3>
+<p>Install <code>tumbler</code></p>
+<h3 id="open-in-terminal">Open in Terminal</h3>
+<p><a
+href="https://askubuntu.com/questions/891680/xubuntu-thunar-open-terminal-here-opens-konsole-in-homefolder"
+class="uri">https://askubuntu.com/questions/891680/xubuntu-thunar-open-terminal-here-opens-konsole-in-homefolder</a></p>
+<p>In <code>~/.config/xfce3/helpers.rc</code> (new file):</p>
+<pre><code>TerminalEmulator=alacritty
+TerminalEmulatorDismissed=true</code></pre>
+<h3 id="open-in-nvim">Open in NVIM</h3>
+<p>First do the above <strong>Open in Terminal</strong> steps</p>
+<p>Change the desktop configuration for NVIM, telling it to run in the
+terminal. The system config file is in
+<code>/usr/share/applications/nvim.desktop</code>. Copy it to
+<code>~/.local/share/applications/nvim.desktop</code> and change:</p>
+<pre><code>Exec=exo-open --launch TerminalEmulator nvim %F
+Terminal=false</code></pre>
+<h2 id="mounting-a-windows-partition">Mounting A Windows Partition</h2>
+<blockquote>
+<p><code># mount partition /mnt/windows --mkdir -o ro</code></p>
+</blockquote>
+<p>List partitions with <code>fdisk -l</code></p>
+<h1 id="problems">Problems</h1>
+<h2 id="audio">Audio</h2>
+<p>Mic: Install <code>pulseaudio</code>, <code>pulseaudio-alsa</code>,
+<code>alsa-firmware</code>.</p>
+<p>Relevant packages:</p>
+<pre><code>local/alsa-firmware 1.2.4-3
+    Firmware binaries for loader programs in alsa-tools and hotplug firmware loader
+local/alsa-lib 1.2.10-2
+    An alternative implementation of Linux sound support
+local/alsa-plugins 1:1.2.7.1-2
+    Additional ALSA plugins
+local/alsa-topology-conf 1.2.5.1-3
+    ALSA topology configuration files
+local/alsa-ucm-conf 1.2.10-2
+    ALSA Use Case Manager configuration (and topologies)
+local/alsa-utils 1.2.10-1
+    Advanced Linux Sound Architecture - Utilities
+local/lib32-alsa-lib 1.2.10-2
+    An alternative implementation of Linux sound support (32 bit)
+local/lib32-alsa-plugins 1.2.7.1-2
+    Additional ALSA plugins (32-bit)
+
+local/pulseaudio 16.1-7
+    A featureful, general-purpose sound server
+local/pulseaudio-alsa 1:1.2.7.1-2
+    ALSA Configuration for PulseAudio</code></pre>
+<h2 id="dark-theme-for-gtk-gnome-apps">Dark Theme for GTK (GNOME)
+Apps</h2>
+<p>Install <code>lxappearance</code>, <code>gnome-themes-extra</code>,
+and <code>libadwaita</code>. Then run <code>lxappearance</code>. Themes
+should show up including Adwaita Dark. Reboot may be required. Firefox
+Downloads<code>-&gt;</code>show in folder used to break Thunar dark
+theme until I set it up from <code>lxappearance</code> and rebooted</p>
+<h2 id="nvidia">NVIDIA</h2>
+<p>Current relevant packages (IdeaPad 5):</p>
+<pre><code>local/lib32-nvidia-utils 545.29.06-1
+    NVIDIA drivers utilities (32-bit)
+local/libvdpau 1.5-2
+    Nvidia VDPAU library
+local/libxnvctrl 545.29.06-1
+    NVIDIA NV-CONTROL X extension
+local/nvidia 545.29.06-7
+    NVIDIA drivers for linux
+local/nvidia-prime 1.0-4
+    NVIDIA Prime Render Offload configuration and utilities
+local/nvidia-utils 545.29.06-1
+    NVIDIA drivers utilities
+
+local/lib32-mesa 1:23.3.1-1
+    An open-source implementation of the OpenGL specification (32-bit)
+local/mesa 1:23.3.1-1
+    An open-source implementation of the OpenGL specification
+local/mesa-utils 9.0.0-3
+    Essential Mesa utilities</code></pre>
+<p>When using <code>nvidia-prime</code>, do not use
+<code>xf86-video-intel</code>. Enable automatically powering down: <a
+href="https://us.download.nvidia.com/XFree86/Linux-x86_64/525.89.02/README/dynamicpowermanagement.html"
+class="uri">https://us.download.nvidia.com/XFree86/Linux-x86_64/525.89.02/README/dynamicpowermanagement.html</a></p>
+<h3 id="crashes-during-suspendsleep">Crashes During Suspend/Sleep</h3>
+<p>Enable <code>nvidia-resume.service</code> and
+<code>nvidia-suspend.service</code></p>
+<h2 id="battery-life">Battery Life</h2>
+<p>Make sure graphics card is set up right (see above)</p>
+<p>Install <code>tlp</code> package and:</p>
+<blockquote>
+<p><code># systemctl enable tlp</code></p>
+</blockquote>
+<p>(# meaning as root)</p>
+<p><code>tlp</code> can also limit the maximum battery charge, in the
+config file <code>/etc/tlp.conf</code>:</p>
+<pre><code># don&#39;t charge above 80%
+STOP_CHARGE_THRESH_BAT0=80</code></pre>
+<p>On some systems (ideapad) this option has different parameters. Check
+with</p>
+<blockquote>
+<p><code># tlp-stat -b</code></p>
+</blockquote>
+<p>On ideapad this option is either 0 or 1, 0 means no threshold, 1
+means 90%.</p>
+<h2 id="laptop-brightness">Laptop Brightness</h2>
+<p>Tools like <code>acpilight</code> (a port of <code>xbacklight</code>
+for laptops) require permissions on the display device
+(i.e. <code>/sys/class/backlight/intel_backlight/brightness</code>).
+<strong>Solution:</strong> Use udev to create a group with permissions
+over the display device. The <code>video</code> group exists by default
+(given the <code>filesystem</code> package) for control over video
+hardware.</p>
+<blockquote>
+<p><code># usermod -aG video &lt;user&gt;</code></p>
+</blockquote>
+<p>In <code>/etc/udev/rules.d/backlight.rules</code> (new file):</p>
+<pre><code>RUN+=&quot;/bin/chgrp video /sys/class/backlight/intel_backlight/brightness&quot;
+RUN+=&quot;/bin/chmod g+w /sys/class/backlight/intel_backlight/brightness&quot;</code></pre>
+<h1 id="customization">Customization</h1>
+<h2 id="locksuspend-on-close-laptop-lid">Lock/suspend on close laptop
+lid</h2>
+<p>Create <code>/etc/systemd/longind.conf.d</code> and a file in there
+called <code>myconfig.conf</code>:</p>
+<pre><code>[Login]
+HandleLidSwitch=suspend</code></pre>
+<p>For locking, use <code>xss-lock</code>. See
+<code>man i3lock</code>.</p>
+<p>Trying to do this manually before knowing about
+<code>xss-lock</code>: In <code>/usr/lib/systemd/system-sleep</code>,
+place an executable shell script. Test if argument 1 is <code>pre</code>
+or <code>post</code>, and you can run scripts before or after
+suspending. See <a
+href="https://blog.christophersmart.com/2016/05/11/running-scripts-before-and-after-suspend-with-systemd/"
+class="uri">https://blog.christophersmart.com/2016/05/11/running-scripts-before-and-after-suspend-with-systemd/</a>
+and <code>man systemd-suspend.service</code></p>
+<h2 id="systray-icon-customization">Systray icon customization</h2>
+<p><a href="https://askubuntu.com/a/15824"
+class="uri">https://askubuntu.com/a/15824</a></p>
+<h1 id="installing-stuff">Installing Stuff</h1>
+<h2 id="tex-live">TeX Live</h2>
+<p>See the setup page on their website. It takes a long time.</p>
+<h1 id="pandoc-test">Pandoc Test</h1>
+<p><span class="math display"> \sum_{i=1}^n f(x) </span> Inline: <span
+class="math inline">\sum_{i=1}^n f(x)</span></p>
+<ul>
+<li>abc</li>
+<li>def</li>
+<li>ghi</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,64 @@
+configuration {
+	modes: [ combi ];
+	combi-modes: [ drun, ssh, window ];
+}
+
+/* Insert theme modifications after this */
+
+* {
+	red: #cc2200;
+	background-color: #001122;
+	normal-background: var(background-color);
+	alternate-normal-background: #002233;
+
+	selected-normal-foreground: #00bbcc;
+	selected-normal-background: #334455;
+
+	selected-active-foreground: var(selected-normal-foreground);
+	selected-active-background: var(selected-normal-background);
+	active-background: var(background-color);
+	active-foreground: var(selected-normal-foreground);
+
+	alternate-active-background: var(alternate-normal-background);
+	alternate-active-foreground: var(selected-normal-foreground);
+
+	urgent-background: var(background-color);
+	selected-urgent-background: var(selected-normal-background);
+	selected-urgent-foreground: var(red);
+	alternate-urgent-background: var(alternate-normal-background);
+
+	normal-foreground: var(text-color);
+	alternate-normal-foreground: var(text-color);
+	normal-background: #001122;
+
+	text-color: #C5C8C6;
+	font: "NotoSans NF 11";
+
+
+}
+
+entry {
+	placeholder: "...";
+}
+
+element {
+	orientation: horizontal;
+	children: [ element-icon, element-text ];
+	spacing: 5px;
+}
+
+num-filtered-rows {
+	text-color: var(text-color);
+}
+
+window {
+	border: 0px 0px 0px 0px;
+	border-color: #006677;
+	padding: 0;
+	y-offset: 31px;
+	location: north west;
+}
+
+inputbar {
+	children: [ entry, num-filtered-rows ];
+}

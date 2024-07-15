@@ -1,8 +1,10 @@
+clipmenu
 xorg
 xorg-xinit
 i3-wm
 feh
 polybar
+trayer
 dmenu
 alacritty
 filesystem
@@ -16,7 +18,6 @@ pulseaudio
 pulseaudio-alsa
 pavucontrol
 pasystray
-trayer
 dunst
 blueman
 ttf-noto-nerd

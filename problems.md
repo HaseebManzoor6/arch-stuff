@@ -86,6 +86,8 @@ Dark. Reboot may be required. Firefox Downloads`->`show in folder
 used to break Thunar dark theme until I set it up from
 `lxappearance` and rebooted
 
+Can also try `xfce-settings` app
+
 ## NVIDIA
 Current relevant packages (IdeaPad 5):
 ```
@@ -156,6 +158,21 @@ RUN+="/bin/chmod g+w /sys/class/backlight/intel_backlight/brightness"
 
 # Customization
 
+## Configuring LightDM
+
+### Wallpapers, Icons, etc
+For `lightdm-gtk-greeter`, see `/etc/lightdm/lightdm-gtk-greeter.conf`
+
+### Run User .xsession
+Create `/usr/share/xsessions/custom.desktop`:
+```
+[Desktop Entry]
+Name=Default
+Exec=/etc/X11/Xsession
+```
+Now `~/.xsession` will run on LightDM login. Make sure to `exec i3`
+in there.
+
 ## Lock/suspend on close laptop lid
 Create `/etc/systemd/longind.conf.d` and a file in there called `myconfig.conf`:
 ```
@@ -163,6 +180,10 @@ Create `/etc/systemd/longind.conf.d` and a file in there called `myconfig.conf`:
 HandleLidSwitch=suspend
 ```
 
+Then use `lightdm` login manager and `light-locker`. This allows suspending from the lock screen automatically on
+lid switch. See **Configuring LightDM**
+
+### Bad Methods
 For locking, use `xss-lock`. See `man i3lock`.
 
 Trying to do this manually before knowing about `xss-lock`:

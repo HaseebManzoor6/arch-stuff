@@ -43,6 +43,7 @@ exec --no-startup-id dex --autostart --environment i3
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 
+exec --no-startup-id clipmenud
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
 exec --no-startup-id pasystray --notify=all
@@ -79,6 +80,8 @@ bindsym $mod+Shift+q kill
 # mod+Shift+s is a decent keybind, it also happens to be what my
 # laptop's screenshot key gets interpreted as
 bindsym $mod+Shift+s exec --no-startup-id flameshot gui
+# clipboard db using rofi and clipmenu
+bindsym $mod+v exec --no-startup-id CM_LAUNCHER=rofi clipmenu
 
 # start dmenu (a program launcher)
 #bindsym $mod+p exec --no-startup-id dmenu_run -fn 'JetBrainsMono NFM' -b

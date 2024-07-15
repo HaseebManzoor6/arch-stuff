@@ -1,3 +1,7 @@
+#!/bin/bash
+# -- AFTER RUNNING --
+# Install a bootloader!
+
 if [[ $EUID > 0 ]]
 then
 	echo "Please run as root. Exiting."

@@ -17,4 +17,4 @@ cp /usr/share/applications/nvim.desktop ~/.local/share/applications/nvim.desktop
 sed -i 's/^Exec=/Exec=exo-open/g' ~/.local/share/applications/nvim.desktop
 sed -i 's/^Terminal=/Terminal=false/g' ~/.local/share/applications/nvim.desktop
 
-cp 'home/.xinitrc' ~
+cp -r home/. ~
